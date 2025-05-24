@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Vacation Tracking System (VTS)
 
 This repository contains my Object-Oriented Analysis and Design (OOAD) work for a Vacation Tracking System (VTS), based on Chapter 12.
@@ -75,3 +76,4 @@ Previously, the process was manual and time-consuming. The new system will reduc
 ## 🧾 Pseudocode
 
 📄 [Click here to view pseudocode for "Manage Time"](pseudocode/Use_Case_Manage_Time.md)
+=======
