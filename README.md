@@ -1,9 +1,6 @@
-<<<<<<< HEAD
 # Vacation Tracking System (VTS)
 
-This repository contains my Object-Oriented Analysis and Design (OOAD) work for a Vacation Tracking System (VTS), based on Chapter 12.
 
----
 
 ## 📌 Project Vision
 
@@ -63,17 +60,17 @@ Previously, the process was manual and time-consuming. The new system will reduc
 
 ## 📌 Use Case: Manage Time
 
-- Flowchart:  
+### Flowchart:  
   ![Flowchart](diagrams/flowcharts/VTS-ManageTime-FlowChart.png)
 
-- Sequence Diagram:  
+### Sequence Diagram:  
   ![Sequence Diagram](diagrams/sequence-diagrams/VTS-ManageTime-SeqDiagram.drawio.png)
 
-- ERD (Entity Relationship Diagram):  
+### ERD (Entity Relationship Diagram):  
   ![ERD](diagrams/ERDs/ERD.png)
 
 ---
 ## 🧾 Pseudocode
 
 📄 [Click here to view pseudocode for "Manage Time"](pseudocode/Use_Case_Manage_Time.md)
-=======
+
