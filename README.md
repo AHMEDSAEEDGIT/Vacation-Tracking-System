@@ -67,7 +67,7 @@ Previously, the process was manual and time-consuming. The new system will reduc
   ![Sequence Diagram](diagrams/sequence-diagrams/VTS-ManageTime-SeqDiagram.drawio.png)
 
 ### ERD (Entity Relationship Diagram):  
-  ![ERD](diagrams/ERDs/ERD.png)
+  ![ERD](diagrams/ERDs/VTS-ERD.drawio.png)
 
 ---
 ## 🧾 Pseudocode
