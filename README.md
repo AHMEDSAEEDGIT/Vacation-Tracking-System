@@ -58,7 +58,7 @@ Previously, the process was manual and time-consuming. The new system will reduc
 
 ---
 
-> 📝 Use Cases
+# 📝 Use Cases
 
 ### 📅 1. Employee Submits Vacation Request
 - [Flowchart](docs/use-cases/employee-request-vacation/flowchart.png)
@@ -80,6 +80,6 @@ Previously, the process was manual and time-consuming. The new system will reduc
 
 ## 🧠 Entity Relationship Diagram (ERD)
 
-- View it here: [erd/erd-v1.png](docs/ERD/erd-v1.png)
+- View it here: [ERD](docs/ERD/erd-v1.png)
 
----
+
