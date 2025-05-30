@@ -7,7 +7,7 @@ This file describes how an employee submits a vacation request and how a manager
 ## 🔐 Employee Logs In
 
 ```pseudo
-START
+BEGIN
 
 // Employee logs into the system
 IF authenticate(employeeCredentials) == TRUE THEN
@@ -25,7 +25,7 @@ END
 
 ## 📝 Employee Submits Vacation Request
 ```pseudo
-START
+BEGIN
 
 // Employee initiates a new request
 IF userClicks("Create New Vacation Request") THEN
@@ -65,7 +65,7 @@ END
 
 ## ✅ Manager Reviews Request
 ```pseudo
-START
+BEGIN
 
 // Manager approves/rejects request
 IF managerLogsIn() == TRUE THEN

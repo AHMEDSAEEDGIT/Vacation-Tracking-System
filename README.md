@@ -58,19 +58,28 @@ Previously, the process was manual and time-consuming. The new system will reduc
 
 ---
 
-## 📌 Use Case: Manage Time
+> 📝 Use Cases
 
-### Flowchart:  
-  ![Flowchart](diagrams/flowcharts/VTS-ManageTime-FlowChart.png)
+### 📅 1. Employee Submits Vacation Request
+- [Flowchart](docs/use-cases/employee-request-vacation/flowchart.png)
+- [Sequence Diagram](docs/use-cases/employee-request-vacation/sequence-diagram.png)
+- [State Machine Diagram](docs/use-cases/employee-request-vacation/state-machine.png)
+- [Pseudocode](docs/use-cases/employee-request-vacation/pseudocode.md)
 
-### Sequence Diagram:  
-  ![Sequence Diagram](diagrams/sequence-diagrams/VTS-ManageTime-SeqDiagram.drawio.png)
+### ✏ 2. Employee Edits or withdraw Pending Request
+- [Flowchart](docs/use-cases/edit-pending-request/flowchart.png)
+- [Sequence Diagram](docs/use-cases/edit-pending-request/sequence.png)
+- [Pseudocode](docs/use-cases/edit-pending-request/pseudocode.md)
 
-### ERD (Entity Relationship Diagram):  
-  ![ERD](diagrams/ERDs/VTS-ERD.drawio.png)
+### ❌ 3. Employee Cancels Approved Request
+- [Flowchart](docs/use-cases/cancel-approved-request/flowchart.png)
+- [Sequence Diagram](docs/use-cases/cancel-approved-request/sequence.png)
+- [Pseudocode](docs/use-cases/cancel-approved-request/pseudocode.md)
 
 ---
-## 🧾 Pseudocode
 
-📄 [Click here to view pseudocode for "Manage Time"](pseudocode/Use_Case_Manage_Time.md)
+## 🧠 Entity Relationship Diagram (ERD)
 
+- View it here: [erd/erd-v1.png](docs/ERD/erd-v1.png)
+
+---
