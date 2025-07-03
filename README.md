@@ -80,6 +80,8 @@ Previously, the process was manual and time-consuming. The new system will reduc
 
 ## 🧠 Entity Relationship Diagram (ERD)
 
-- View it here: [ERD](docs/ERD/erd-v1.png)
+- ERD V1 Details View it here: [ERD](docs/ERD/V1/vts-erd-notes.md)
+- ERD V2 Details View it here: [ERD](docs/ERD/v2/vts-erd-v2-notes.md)
+
 
 
