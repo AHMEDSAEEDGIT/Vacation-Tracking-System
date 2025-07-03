@@ -1,10 +1,13 @@
-[ERD v1](vts-erd-v1.png)
 
 # Vacation Tracking System (VTS) - ERD Version 1
-## Overview
+![ERD v1](vts-erd-v1.png)
+
+&nbsp;
+
+## 🔍 Overview
 This is the initial version of the Entity Relationship Diagram for a  Vacation Tracking System, representing the basic structure for handling vacation requests.
 
-## Current Design Features
+## 📃 Current Design Features
 - Simple employee-to-manager relationship
 - Basic request status tracking (approve/reject)
 - Direct manager approval workflow
@@ -12,7 +15,7 @@ This is the initial version of the Entity Relationship Diagram for a  Vacation T
 - Email notifications on status change
 
 
-## Business Logic Flow
+## 💡 Business Logic Flow
 1. Employee submits vacation request with details (StartDate, EndDate, HoursPerDay)
 2. Request appears in direct manager's dashboard via query:
 `SELECT * FROM Request r JOIN Employee e ON r.EmployeeId = e.Id WHERE e.ManagerId = :managerId`
@@ -20,7 +23,7 @@ This is the initial version of the Entity Relationship Diagram for a  Vacation T
 4. System updates request status
 5. Email notification sent to employee
 
-## Limitations (To Be Addressed in Future Versions)
+## ↔ Limitations (To Be Addressed in Future Versions)
 - No history tracking of status changes
 - Single approval point (direct manager only)
 - No support for multi-level approvals
@@ -34,7 +37,7 @@ This is the initial version of the Entity Relationship Diagram for a  Vacation T
 - No rules based on vacation duration/type
 
 
-## Future Improvements Planned
+## 🛠 Future Improvements Planned
 - Version 2: Add status history tracking
 - Version 3: Implement multi-level approvals
 - Version 4: Add delegation capabilities

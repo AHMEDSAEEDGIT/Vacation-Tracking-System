@@ -1,6 +1,10 @@
-[ERD V2](VTS-ERD-V2%20(2).png)
+
 
 # Vacation Tracking System (VTS) - ERD Version 
+
+![ERD V2](VTS-ERD-V2%20(2).png)
+
+&nbsp; 
 
 ## Problem in V1
 We can't track when status changes occurred or who made them, which is crucial for reporting and compliance.
