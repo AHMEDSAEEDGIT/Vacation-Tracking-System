@@ -82,6 +82,8 @@ Previously, the process was manual and time-consuming. The new system will reduc
 
 - ERD V1 Details View it here: [ERD V1](docs/ERD/V1/vts-erd-notes.md)
 - ERD V2 Details View it here: [ERD V2](docs/ERD/v2/vts-erd-v2-notes.md)
+- ERD V3 Details View it here: [ERD V3](docs/ERD/v3/vts-erd-v3-notes.md)
+
 
 
 
