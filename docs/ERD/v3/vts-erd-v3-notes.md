@@ -104,25 +104,51 @@ Tracks each approval action and record it as ledger:
  > Employee submits request:
 
 ```sql
-INSERT INTO Request VALUES (1001, 501, '2024-09-01', '2024-09-05', 'Pending', 1, 1);
+INSERT INTO Request (Id, EmployeeId, StartDate, EndDate, Status, WorkflowId, CurrentLevel ) 
+       VALUES  VALUES (1001, 501, '2024-09-01', '2024-09-05', 'Pending', 1, 1);
 ```
-
 
 > System logs initial status in the `RequestStatusHistory`:
 
 ```sql
-INSERT INTO RequestStatusHistory VALUES (1001, 'Pending', 501, 'Initial submission');
+INSERT INTO RequestStatusHistory  ( RequestId, Status, ChangedById, Comment ) 
+       VALUES (1001, 'Pending', 501, 'Initial submission');
 ```
+
+### Database State After Submission
+|Table                 |Field          |Value    |
+|:--------------------:|:-------------:|:-------:|
+|`Request`             |`Stuatus`      |`Pending`|
+|`Request`             |`CurrentLevel` |`1`      |
+|`RequestStatusHistory`|`Status`       |`Pending`|
+
+
+### Phase 2: Routing to Approvers & Approval:
+
+> System Routes to Approvers
+
+```sql
+SELECT e.Id, e.Name
+FROM Approver a
+JOIN Employee e ON a.EmployeeId = e.Id
+WHERE a.LevelId = [CurrentLevel]
+AND a.WorkflowId = [RequestWorkflowId];
+```
+
+### Approval Path Example:
+1. Manager Approval (Level 1)
+2. HR Verification (Level 2)
+3. Director Approval `if >5 days` (Level 3)
+
 
 &nbsp; 
 
- ### Phase 2: Routing & Approval:
-
 > **Case A** : Serial Approval (Manager → HR)
-> Manager approves:
+> Manager approves approves at level 1 :
 
 ```sql
-INSERT INTO RequestApproval VALUES (1001, 1, 601, 'Approved', NOW(), 'Coverage confirmed');
+INSERT INTO RequestApproval (RequestId, LevelId, ApproverId, Decision, Comments )  
+       VALUES (1001, 1, 601, 'Approved', NOW(), 'Coverage confirmed');
 ```
 
 > System progresses to next level:
@@ -137,7 +163,8 @@ UPDATE Request SET CurrentLevel = 2 WHERE Id = 1001;
 > Any HR can approve without waiting:
 
 ```sql
-INSERT INTO RequestApproval VALUES (1001, 2, 701, 'Approved', NOW(), 'Payroll adjusted');
+INSERT INTO RequestApproval (RequestId, LevelId, ApproverId, Decision, Comments ) 
+       VALUES (1001, 2, 701, 'Approved', NOW(), 'Payroll adjusted');
 ```
 
 &nbsp; 
@@ -166,4 +193,32 @@ INSERT INTO RequestApproval VALUES (1001, 2, 701, 'Rejected', NOW(), 'Conflict w
 ```sql
 UPDATE Request SET Status = 'Rejected', CurrentLevel = NULL WHERE Id = 1001;
 ```
+
+
+### ⏱️ Escalation Handling
+> Timeout Detection (Daily Job):
+
+```sql
+SELECT r.Id FROM Request r
+JOIN ApprovalLevel l ON r.CurrentLevel = l.Id
+WHERE r.Status = 'Pending'
+AND l.IsEscalatable = 1
+AND DATEDIFF(NOW(), r.LastUpdated) > 2;
+```
+
+**Escalation Actions:**
+> Notify backup approver:
+
+```sql
+INSERT INTO Notifications VALUES (801, 'Escalated: Request 1001 pending >2 days', 1001);
+```
+
+> Skip to next level if configured:
+
+```sql
+UPDATE Request SET CurrentLevel = 3 WHERE Id = 1001;
+```
+
+
+
 
